@@ -21,13 +21,18 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+
         gtag('config', 'UA-58568623-1');
     </script>
 </head>
+
 <body id="posh" class="fixed-header site">
-<div id="cover" style="display: none;"></div>
+<div id="cover" style="display: none;">
+</div>
 {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-{{>navigation-tiad}}
+
+{{>nav-fb-tiad-one-pager}}
+
 <main role="main" class="container-fluid mr-0 p-0 h-100">
     {{>mobile-btn}}
     {{> body}}
