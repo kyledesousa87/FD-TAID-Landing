@@ -79,7 +79,6 @@ gulp.task('watch', ['sass'], function () {
     gulp.watch(['src/js/partials/*.js'], ['scripts', browserSync.reload]);
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/**/*'], ['sass', browserSync.reload]);
     gulp.watch(['src/images/**/*'], ['images']);
-    gulp.watch(['src/vid/**/*'], ['media']);
     gulp.watch(['src/**/*.html'], ['resetPages', 'compile-html', browserSync.reload]);
     console.log('Watching for changes');
 });
@@ -98,13 +97,6 @@ gulp.task('images', function () {
         .pipe(cache(imagemin ())) // Caching images that ran through imagemin
         .pipe(gulp.dest('dist/images/'));
         console.log('Optimizing images');
-});
-
-// Copies video assets to dist
-gulp.task('media', function () {
-    return gulp.src('src/media/**/*')
-        .pipe(gulp.dest('dist//media/'));
-        console.log('Copying media into dist folder');
 });
 
 // Places font files in the dist folder
@@ -196,7 +188,7 @@ gulp.task('clean:dist', function () {
 
 // ------------ Build Sequence -------------
 // Simply run 'gulp' in terminal to run local server and watch for changes
-gulp.task('default', ['clean:dist', 'iconfonts', 'font', 'owl', 'fontAwesome',  'scripts', 'images', 'compile-html', 'resetPages', 'media', 'watch']);
+gulp.task('default', ['clean:dist', 'iconfonts', 'font', 'owl', 'fontAwesome',  'scripts', 'images', 'compile-html', 'resetPages', 'watch']);
 
 // Creates production ready assets in dist folder
 gulp.task('build', function () {
