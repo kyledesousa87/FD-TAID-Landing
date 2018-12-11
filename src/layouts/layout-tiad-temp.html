@@ -1,7 +1,6 @@
 {{!-- This is the base layout for your project, and will be used on every page. --}}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {{!— Required meta tags --}}
     <meta charset="utf-8">
@@ -22,23 +21,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-58568623-1');
     </script>
 </head>
-
 <body id="posh" class="fixed-header site">
-<div id="cover" style="display: none;">
-</div>
+<div id="cover" style="display: none;"></div>
 {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-
 {{>navigation-tiad}}
 <main role="main" class="container-fluid mr-0 p-0 h-100">
     {{> body}}
-
     {{>footer}}
 </main>
-
 {{>modal-video}}
 {{>modal-form-2-teeth}}
 {{>modal-guarantee}}
